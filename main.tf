@@ -223,3 +223,11 @@ resource "aws_iam_role_policy_attachment" "default" {
 locals {
   iam_name = "${var.name}-ecs-codedeploy"
 }
+#code deploy controller
+resource "aws_ecs_service" "default" {
+  ......
+
+  deployment_controller {
+    type = "CODE_DEPLOY"
+  }
+}
